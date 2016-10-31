@@ -1,14 +1,20 @@
 public class Plane{
   private String type;
+  private String pilot;
   private Passenger[] fusalage;
 
-  public Plane(String type){
+  public Plane(String type, String pilotName){
     this.type = type;
+    this.pilot = pilotName;
     this.fusalage = new Passenger[416];
   }  
 
   public String getType(){
     return this.type;
+  }
+
+  public String getPilot(){
+    return this.pilot;
   }
 
   public int passengerCount(){
@@ -45,9 +51,6 @@ public class Plane{
       fusalage[i] = null; 
     }
   }
-
-
-
 
 
 

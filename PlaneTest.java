@@ -7,13 +7,18 @@ public class PlaneTest{
 
   @Before
   public void before(){
-    plane = new Plane("Boeing 747");
+    plane = new Plane("Boeing 747", "Hans Solo");
     passenger = new Passenger();
   }
 
   @Test 
   public void hasType(){
     assertEquals( "Boeing 747", plane.getType());
+  }
+
+  @Test
+  public void hasPilot(){
+    assertEquals("Hans Solo", plane.getPilot());
   }
 
   @Test
@@ -65,13 +70,7 @@ public class PlaneTest{
     assertEquals(0, plane.passengerCount());
   }
 
-  // @Test
-  // public void weightOfPassenger(){
-  //   plane.board(passenger);
-  //   assertEquals(1, plane.passengerCount());
-  //   passenger.weight()
-  // }
-
+ 
 
 
 
