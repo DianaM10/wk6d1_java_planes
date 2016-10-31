@@ -22,7 +22,7 @@ public class Plane{
   }
 
   public void board(Passenger passenger){
-    if ( fusalageFull() ){
+    if ( fusalageFull()){
       return;
     }
     int count = passengerCount();
@@ -32,5 +32,24 @@ public class Plane{
   public boolean fusalageFull(){
     return passengerCount() == fusalage.length;
   }
+
+  public boolean takeOff(){
+    if (fusalageFull() == true) {
+      return true; 
+    }
+    else return false;
+  }
+
+  public void disembark(){
+    for (int i = 0; i < 416 ;i++ ) {
+      fusalage[i] = null; 
+    }
+  }
+
+
+
+
+
+
 
 }
