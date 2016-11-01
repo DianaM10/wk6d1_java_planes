@@ -21,22 +21,8 @@ public class Plane{
 
   public int cargoCount(){
     return this.fusalage.size();
-    // int counter = 0;
-    // for (Passenger count : fusalage){
-    //   if (count != null){
-    //     counter++;
-    //   }
-    // }
-    // return counter;
   }
 
-  // public void board(Passenger passenger){
-  //   this.fusalage.add(passenger);
-    // if ( fusalageFull()){
-    //   return;
-    // }
-    // int count = passengerCount();
-    // fusalage[count] = passenger;
     public void board(Carryable cargo){
     this.fusalage.add(cargo);
   }
@@ -57,9 +43,6 @@ public class Plane{
 
   public void empty(){
     this.fusalage.clear();
-    // for (int i = 0; i < 416 ;i++ ) {
-    //   fusalage(i) = null; 
-    // }
   }
 
   public Carryable disembark(){

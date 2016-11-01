@@ -64,8 +64,6 @@ public class PlaneTest{
 
   @Test
   public void prepareForTakeOff(){
-    // plane.board(passenger);
-    // assertEquals(1, plane.passengerCount());
     for (int i = 0; i < 200; i++){
       plane.board(passenger);
     }
@@ -78,11 +76,6 @@ public class PlaneTest{
 
   @Test
   public void emptyPlane(){
-    // plane.board(passenger);
-    // assertEquals(1, plane.cargoCount());
-    // for (int i = 0; i < 416; i++) {
-    //   plane.board(passenger);
-    // }
     for (int i = 0; i < 200; i++){
       plane.board(passenger);
     }
