@@ -1,12 +1,14 @@
+import java.util.*;
+
 public class Plane{
   private String type;
   private String pilot;
-  private Passenger[] fusalage;
+  private ArrayList<Carryable> fusalage;
 
   public Plane(String type, String pilotName){
     this.type = type;
     this.pilot = pilotName;
-    this.fusalage = new Passenger[416];
+    this.fusalage = new ArrayList<Carryable>();
   }  
 
   public String getType(){
@@ -17,26 +19,33 @@ public class Plane{
     return this.pilot;
   }
 
-  public int passengerCount(){
-    int counter = 0;
-    for (Passenger count : fusalage){
-      if (count != null){
-        counter++;
-      }
-    }
-    return counter;
+  public int cargoCount(){
+    return this.fusalage.size();
+    // int counter = 0;
+    // for (Passenger count : fusalage){
+    //   if (count != null){
+    //     counter++;
+    //   }
+    // }
+    // return counter;
   }
 
-  public void board(Passenger passenger){
-    if ( fusalageFull()){
-      return;
-    }
-    int count = passengerCount();
-    fusalage[count] = passenger;
+  // public void board(Passenger passenger){
+  //   this.fusalage.add(passenger);
+    // if ( fusalageFull()){
+    //   return;
+    // }
+    // int count = passengerCount();
+    // fusalage[count] = passenger;
+    public void board(Carryable cargo){
+    this.fusalage.add(cargo);
   }
 
   public boolean fusalageFull(){
-    return passengerCount() == fusalage.length;
+    if (cargoCount() == 416){
+      return true;
+    }
+    else return false;
   }
 
   public boolean takeOff(){
@@ -46,10 +55,18 @@ public class Plane{
     else return false;
   }
 
-  public void disembark(){
-    for (int i = 0; i < 416 ;i++ ) {
-      fusalage[i] = null; 
+  public void empty(){
+    this.fusalage.clear();
+    // for (int i = 0; i < 416 ;i++ ) {
+    //   fusalage(i) = null; 
+    // }
+  }
+
+  public Carryable disembark(){
+    if (cargoCount() > 0){
+      return fusalage.remove(0);
     }
+    return null;
   }
 
 
